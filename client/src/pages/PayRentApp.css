@@ -1,0 +1,40 @@
+.pay-rent-container {
+    width: 300px;
+    margin: auto;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .pay-rent-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .pay-rent-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pay-rent-button:hover {
+    background-color: #45a049;
+  }
+  

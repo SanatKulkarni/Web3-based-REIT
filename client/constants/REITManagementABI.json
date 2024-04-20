@@ -1,0 +1,588 @@
+[
+  {
+    "type": "constructor",
+    "name": "",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "event",
+    "name": "Invested",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "propertyId",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "investor",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "PropertyListed",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "propertyId",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "owner",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "value",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "ipfsHash",
+        "indexed": false,
+        "internalType": "string"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RentPaid",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "propertyId",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "tenant",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "amount",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "month",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "RentSet",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "propertyId",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "rent",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StakeholderAdded",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "stakeholder",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "StakeholderBanned",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "stakeholder",
+        "indexed": false,
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "event",
+    "name": "TenantAdded",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "propertyId",
+        "indexed": false,
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "tenant",
+        "indexed": false,
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "duration",
+        "indexed": false,
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "anonymous": false
+  },
+  {
+    "type": "function",
+    "name": "addStakeholder",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_stakeholder",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "addTenant",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "_tenant",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "_duration",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "banStakeholder",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_stakeholder",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "distributeRent",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_amount",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getInvestedProperties",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "_investor",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "tuple[]",
+        "name": "",
+        "components": [
+          {
+            "type": "uint256",
+            "name": "id",
+            "internalType": "uint256"
+          },
+          {
+            "type": "string",
+            "name": "description",
+            "internalType": "string"
+          },
+          {
+            "type": "uint256",
+            "name": "value",
+            "internalType": "uint256"
+          },
+          {
+            "type": "string",
+            "name": "ipfsHash",
+            "internalType": "string"
+          }
+        ],
+        "internalType": "struct REITManagement.PropertyDetail[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPropertyCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getPropertyDetails",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "propertyOwner",
+        "internalType": "address"
+      },
+      {
+        "type": "string",
+        "name": "description",
+        "internalType": "string"
+      },
+      {
+        "type": "uint256",
+        "name": "propertyValue",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "totalInvested",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "rent",
+        "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "ipfsHash",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getTenantStatus",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "_tenant",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bool[]",
+        "name": "",
+        "internalType": "bool[]"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "investIntoProperty",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_investmentAmount",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "isRentPaid",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "address",
+        "name": "_tenant",
+        "internalType": "address"
+      },
+      {
+        "type": "uint256",
+        "name": "_month",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "listProperty",
+    "inputs": [
+      {
+        "type": "string",
+        "name": "_description",
+        "internalType": "string"
+      },
+      {
+        "type": "uint256",
+        "name": "_value",
+        "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "_ipfsHash",
+        "internalType": "string"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "owner",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "payRent",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_month",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_amount",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "properties",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "address",
+        "name": "propertyOwner",
+        "internalType": "address payable"
+      },
+      {
+        "type": "string",
+        "name": "description",
+        "internalType": "string"
+      },
+      {
+        "type": "uint256",
+        "name": "propertyValue",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "totalInvested",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "rent",
+        "internalType": "uint256"
+      },
+      {
+        "type": "string",
+        "name": "ipfsHash",
+        "internalType": "string"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "propertyCount",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "setRent",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_propertyId",
+        "internalType": "uint256"
+      },
+      {
+        "type": "uint256",
+        "name": "_rent",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "setTaxRate",
+    "inputs": [
+      {
+        "type": "uint256",
+        "name": "_taxRate",
+        "internalType": "uint256"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "stakeholders",
+    "inputs": [
+      {
+        "type": "address",
+        "name": "",
+        "internalType": "address"
+      }
+    ],
+    "outputs": [
+      {
+        "type": "bool",
+        "name": "",
+        "internalType": "bool"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "taxRate",
+    "inputs": [],
+    "outputs": [
+      {
+        "type": "uint256",
+        "name": "",
+        "internalType": "uint256"
+      }
+    ],
+    "stateMutability": "view"
+  }
+]

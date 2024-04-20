@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body {
+    background-color: black;
+    color: white;
+    font-family: 'Inter', sans-serif;   
+}
+
+.navbar {
+    background-color: #131313;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between; /* Align items to the start and end of the navbar */
+    align-items: center; /* Center vertically */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.navbar li {
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.navbar li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar li a:hover {
+    background-color: #555;
+    border-radius: 5px;
+}
+
+.connect-wallet {
+    margin-left: auto; /* Move to the left as much as possible */
+}
+
+.connect-wallet-btn {
+    margin-right: auto;
+}

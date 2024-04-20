@@ -1,0 +1,69 @@
+/* REITManagementApp.css */
+
+.container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #131313;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #131313; /* Background color */
+    color: #ccc; /* Text color */
+  }
+  
+  select::placeholder {
+    color: #ccc; /* Placeholder text color */
+  }
+  
+  
+  input[type="text"]::placeholder,
+  input[type="number"]::placeholder {
+    color: #ccc; /* Placeholder text color */
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: calc(70% - 10px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #131313;
+    color: #ccc; /* Input text color */
+  }
+  
+  
+  input[type="text"]:focus,
+  input[type="number"]:focus {
+    outline: none;
+    border-color: red;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-left: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #131313;
+    color: #fff;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: red;
+  }
+  
+  

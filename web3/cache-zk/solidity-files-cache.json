@@ -1,0 +1,52 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "D:\\course_and_projects\\reit\\web3\\contracts\\reitcontract.sol": {
+      "lastModificationDate": 1713572096774,
+      "contentHash": "05541725b427d69bcb1ad30aaacdcf6e",
+      "sourceName": "contracts/reitcontract.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        },
+        "zksolc": {
+          "version": "1.3.9",
+          "compilerSource": "binary",
+          "settings": {
+            "optimizer": {
+              "enabled": true,
+              "mode": "3"
+            },
+            "compilerPath": "",
+            "experimental": {}
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "REITManagement"
+      ]
+    }
+  }
+}
