@@ -1,1 +1,1 @@
-# 9Hacks-REIT
+# Web3 REITs made easy
